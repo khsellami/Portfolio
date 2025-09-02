@@ -2,27 +2,64 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 
 export function SkillsSection() {
-  const [filter, setFilter] = useState<"All" | "Front-End" | "Back-End" | "AI/ML">("All")
+  const [filter, setFilter] = useState<
+    "All" | "Front-End" | "Back-End" | "AI/ML" | "Databases" | "Tools/DevOps" | "Methodologies" | "Others"
+  >("All")
 
   const skills = [
-    { name: "React.js", category: "Front-End" },
-    { name: "Next.js", category: "Front-End" },
-    { name: "HTML & CSS", category: "Front-End" },
-    { name: "JavaScript / TypeScript", category: "Front-End" },
-    { name: "Node.js", category: "Back-End" },
-    { name: "Fastify", category: "Back-End" },
-    { name: "SQLite / MySQL", category: "Back-End" },
+    // Programming Languages
+    { name: "C / C++", category: "Others" },
+    { name: "Shell Scripting", category: "Others" },
+    { name: "JavaScript (ES6+)", category: "Front-End" },
+
+    // Frontend
+    { name: "HTML5 / CSS3", category: "Front-End" },
+    { name: "React.js / Next.js", category: "Front-End" },
+    { name: "Bootstrap / Tailwind CSS", category: "Front-End" },
+
+    // Backend
+    { name: "Node.js (Express, Fastify)", category: "Back-End" },
+    { name: "RESTful API", category: "Back-End" },
+    { name: "Authentication & Authorization (JWT, OAuth2)", category: "Back-End" },
+    { name: "WebSockets", category: "Back-End" },
+
+    // Databases
+    { name: "MySQL", category: "Databases" },
+    { name: "PostgreSQL", category: "Databases" },
+    { name: "SQLite", category: "Databases" },
+    { name: "MongoDB", category: "Databases" },
+
+    // AI/ML
     { name: "Python", category: "AI/ML" },
     { name: "PyTorch", category: "AI/ML" },
     { name: "TensorFlow", category: "AI/ML" },
     { name: "Machine Learning", category: "AI/ML" },
     { name: "Computer Vision", category: "AI/ML" },
+
+    // Tools/DevOps
+    { name: "Docker / Docker Compose", category: "Tools/DevOps" },
+    { name: "CI/CD", category: "Tools/DevOps" },
+    { name: "NGINX", category: "Tools/DevOps" },
+    { name: "AWS", category: "Tools/DevOps" },
+    { name: "Git & GitHub", category: "Tools/DevOps" },
+    { name: "Postman", category: "Tools/DevOps" },
+
+    // Methodologies
+    { name: "Merise / UML", category: "Methodologies" },
   ]
 
-  const categories: ("All" | "Front-End" | "Back-End" | "AI/ML")[] = ["All", "Front-End", "Back-End", "AI/ML"]
+  const categories: (
+    | "All"
+    | "Front-End"
+    | "Back-End"
+    | "AI/ML"
+    | "Databases"
+    | "Tools/DevOps"
+    | "Methodologies"
+    | "Others"
+  )[] = ["All", "Front-End", "Back-End", "Databases", "AI/ML", "Tools/DevOps", "Methodologies", "Others"]
 
   return (
     <section id="skills" className="py-20 px-4 bg-muted/30">
@@ -32,13 +69,12 @@ export function SkillsSection() {
             Skills
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            <br></br>
-            My technical skills span front-end, back-end development, and AI/ML projects.
+            My technical skills span front-end, back-end development, databases, DevOps, and AI/ML projects.
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -54,8 +90,8 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Skills Grid (compact) */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {skills
             .filter((skill) => filter === "All" || skill.category === filter)
             .map((skill, index) => (

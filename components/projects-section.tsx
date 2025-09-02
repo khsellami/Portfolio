@@ -5,20 +5,36 @@ import { Github } from "lucide-react"
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Chess-Based Encryption using Reinforcement Learning",
+      title: "Web Project - Creative Thinking",
       description:
-        "Built an innovative encryption system using chess mechanics and DQN. Custom Gym environment, TensorFlow + PyTorch, Streamlit frontend.",
-      technologies: ["Python", "TensorFlow", "PyTorch", "Streamlit", "Reinforcement Learning"],
-      github: "https://github.com/khsellami",
-      image: "/Chess_project.png",
+        "Multi-page responsive web project built with HTML, CSS, JavaScript, and Bootstrap. Includes user authentication, profile management, payment processing, and informational pages.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+      github: "https://github.com/khsellami/Web_project_Creative_Thinking",
+      image: "/creative_thinking.png",
     },
     {
-      title: "Drawing Canvas using OpenGL in C++",
+      title: "Cub3D - Raycasting Game Engine",
       description:
-        "Interactive drawing app with OpenGL + GLUT. Supports object-based rendering, color presets, and scene creation.",
-      technologies: ["C++", "OpenGL", "GLUT", "Computer Graphics"],
-      github: "https://github.com/khsellami",
-      image: "/Drawing_Canvas.png",
+        "A 3D game engine inspired by Wolfenstein 3D, built at 42 School. Implements raycasting to render 3D environments from 2D maps with textures, sprites, and interactive controls.",
+      technologies: ["C", "Raycasting", "MinilibX", "Computer Graphics"],
+      github: "https://github.com/khsellami/cub3d",
+      image: "/cub.png",
+    },
+    {
+      title: "Inception",
+      description:
+      "System administration and virtualization project at 42 School. Built a secure infrastructure using Docker Compose with multiple containers (NGINX, WordPress, MariaDB) following best practices for networking, volumes, and security.",
+      technologies: ["Docker", "NGINX", "WordPress", "MariaDB", "Linux", "Networking"],
+      github: "https://github.com/khsellami/Inception_42",
+      image: "/inception.png",
+    },
+    {
+      title: "Ft_Transcendence",
+      description:
+      "A full-stack web application featuring a Pong game with user accounts, profiles, chat, and multiplayer. Built with a microservices architecture using Next.js frontend, multiple backend services, and an Nginx reverse proxy with HTTPS.",
+      technologies: ["Next.js", "Node.js", "Fastify", "PostgreSQL", "Nginx", "Docker", "Microservices"],
+      github: "https://github.com/khsellami/Ft_Transcendence",
+      image: "/trans.png",
     },
   ]
 
